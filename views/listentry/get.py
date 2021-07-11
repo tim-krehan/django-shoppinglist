@@ -3,7 +3,7 @@ from django.core import serializers
 from ...models import ListEntry
 from django.http.response import HttpResponse
 
-def list(request, pk):
-    list = ListEntry.objects.filter(shoppinglist=pk)
-    json = serializers.serialize("json", list)
+def get(request, pk):
+    entry = ListEntry.objects.filter(pk=pk)
+    json = serializers.serialize("json", entry)
     return HttpResponse(json, content_type="application/json")

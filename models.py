@@ -19,6 +19,7 @@ class ListEntry(models.Model):
     name = models.CharField(max_length=256)
     checked = models.BooleanField(default=False)
     added_at = models.DateTimeField(default=timezone.now)
+    added_by = models.ForeignKey(User, on_delete=CASCADE)
 
     def __str__(self) -> str:
         return self.name
