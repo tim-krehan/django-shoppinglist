@@ -6,5 +6,5 @@ from .views import urls
 
 urlpatterns = [
     path('sladmin/', admin.site.urls),
-    path('api/v<int:version>/', include(views.urls))
+    path('api/v1/', include(views.urls))
 ]

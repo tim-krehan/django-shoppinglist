@@ -1,8 +1,10 @@
-from django.urls import path
+from . import listentry, shoppinglist
+from django.urls import include, path
 
-from . import api
+from . import shoppinglist
+from . import listentry
 
 urlpatterns = [
-    path('shoppinglist/', api.shoppinglist, name="ShoppingList"),
-    path('listentry/', api.listentry, name="List Entry")
+    path('shoppinglist/<int:pk>/', shoppinglist.get.get , name="Shoppinglist Get"),
+    path('shoppinglist/<int:pk>/list', listentry.list.list , name="Shoppinglist List"),
 ]
