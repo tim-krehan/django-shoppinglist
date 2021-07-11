@@ -1,5 +1,5 @@
 from django.http.response import HttpResponse
 
-def api(request, version):
-    responseText = '{"welcome": "welcome to the API V%s!"}' % version
+def shoppinglist(request):
+    responseText = '{"welcome": "welcome to the shoppinglist API!"}'
     return HttpResponse(responseText, content_type="application/json")
