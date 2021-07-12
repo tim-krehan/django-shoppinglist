@@ -1,18 +1,17 @@
-from . import listentry, shoppinglist
+from . import listentry, shoppinglist, user
 from django.urls import include, path
 
-from . import shoppinglist
-from . import listentry
-from . import user
+from .shoppinglist import urls
+from .listentry import urls
+from .user import urls
 
 urlpatterns = [
     # shoppinglist
-    path('shoppinglist/<int:pk>/', shoppinglist.get.get),
-    path('shoppinglist/<int:pk>/list/', listentry.list.list),
+    path('shoppinglist/', include(shoppinglist.urls)),
 
     # shoppinglist entries
-    path('listentry/<int:pk>/', listentry.get.get),
+    path('listentry/', include(listentry.urls)),
 
     # user
-    path('user/<int:pk>/', user.get.get),
+    path('user/', include(user.urls)),
 ]
