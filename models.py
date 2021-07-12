@@ -13,9 +13,18 @@ class ShoppingList(models.Model):
     def __str__(self) -> str:
         return self.display_name
 
+class Unit(models.Model):
+    name = models.CharField(max_length=256)
+    display_name = models.CharField(max_length=256)
+    short_string = models.CharField(max_length=10)
+
+    def __str__(self) -> str:
+        return self.display_name
 
 class ListEntry(models.Model):
     shoppinglist = models.ForeignKey(ShoppingList, on_delete=models.CASCADE)
+    amount = models.IntegerField(default=1)
+    unit = models.ForeignKey(Unit, on_delete=CASCADE)
     name = models.CharField(max_length=256)
     checked = models.BooleanField(default=False)
     added_at = models.DateTimeField(default=timezone.now)
