@@ -24,5 +24,13 @@ class ShoppingListAdmin(admin.ModelAdmin):
     list_display = ['display_name', 'owner', 'last_change']
     inlines = [ListEntryInlineAdmin]
 
+
+class UnitAdmin(admin.ModelAdmin):
+    fieldsets = [
+        ("Units", {'fields': ['name', 'display_name', 'short_string']})
+    ]
+    list_display = ['name', 'display_name', 'short_string']
+
 admin.site.register(ShoppingList, ShoppingListAdmin)
 admin.site.register(ListEntry, ListEntryAdmin)
+admin.site.register(Unit, UnitAdmin)
