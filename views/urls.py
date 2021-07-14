@@ -14,4 +14,7 @@ urlpatterns = [
 
     # user
     path('user/', include(user.urls)),
+
+    # # api
+    # path('', )
 ]

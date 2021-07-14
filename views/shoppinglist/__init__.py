@@ -1,1 +1,0 @@
-from . import get, list, add, new, update, delete
