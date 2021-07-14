@@ -4,7 +4,7 @@ from django.core import serializers
 import json
 
 # POST
-def update(request, pk):
+def req(request, pk):
     body = request.body
     jsonBody = json.loads(body)
     user = User.objects.get(pk=pk)

@@ -3,9 +3,9 @@ from django.urls import path
 
 
 urlpatterns = [
-    path('<int:pk>/', get.get),
-    path('<int:pk>/delete/', delete.delete),
-    path('<int:pk>/update/', update.update),
-    path('<int:pk>/check/', check.check),
-    path('<int:pk>/uncheck/', uncheck.uncheck),
+    path('<int:pk>/', get.req),
+    path('<int:pk>/delete/', delete.req),
+    path('<int:pk>/update/', update.req),
+    path('<int:pk>/check/', check.req),
+    path('<int:pk>/uncheck/', uncheck.req),
 ]

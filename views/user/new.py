@@ -3,8 +3,7 @@ from django.http.response import HttpResponse
 from django.core import serializers
 import json
 
-# POST
-def new(request):
+def req(request):
     body = request.body
     jsonBody = json.loads(body)
     user = User.objects.create_user(
