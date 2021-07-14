@@ -11,13 +11,13 @@ def req(request, pk):
     jsonBody = json.loads(body)
     shoppinglist = ShoppingList.objects.get(pk=pk)
 
-    if jsonBody['name'] != None :
+    if 'name' in jsonBody:
         shoppinglist.name = jsonBody["name"]
 
-    if jsonBody['display_name'] != None :
+    if 'display_name' in jsonBody:
         shoppinglist.display_name = jsonBody["display_name"]
 
-    if jsonBody['owner'] != None :
+    if 'owner' in jsonBody:
         user = User.objects.get(pk=jsonBody["owner"])
         shoppinglist.owner = user
 

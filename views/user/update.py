@@ -8,19 +8,19 @@ def req(request, pk):
     body = request.body
     jsonBody = json.loads(body)
     user = User.objects.get(pk=pk)
-    if jsonBody['username'] != None :
+    if 'username' in jsonBody:
         user.username = jsonBody["username"]
 
-    if jsonBody['first_name'] != None :
+    if 'first_name' in jsonBody:
         user.first_name = jsonBody["first_name"]
 
-    if jsonBody['last_name'] != None :
+    if 'last_name' in jsonBody:
         user.last_name = jsonBody["last_name"]
 
-    if jsonBody['email'] != None :
+    if 'email' in jsonBody:
         user.email = jsonBody["email"]
 
-    if jsonBody['password'] != None :
+    if 'password' in jsonBody:
         user.set_password(jsonBody["password"])
 
     user.save()
