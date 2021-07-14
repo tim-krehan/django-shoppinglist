@@ -4,6 +4,6 @@ from ...models import ListEntry
 from django.http.response import HttpResponse
 
 def get(request, pk):
-    entry = ListEntry.objects.filter(pk=pk)
-    json = serializers.serialize("json", entry)
+    entry = ListEntry.objects.get(pk=pk)
+    json = serializers.serialize("json", [entry])
     return HttpResponse(json, content_type="application/json")
