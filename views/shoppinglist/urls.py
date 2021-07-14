@@ -1,8 +1,9 @@
-from . import get, list, add, new, update, delete
+from . import get, list, add, new, update, delete, api
 from django.urls import path
 
 
 urlpatterns = [
+    path('', api.req),
     path('new/', new.req),
     path('<int:pk>/', get.req),
     path('<int:pk>/list/', list.req),

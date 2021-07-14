@@ -4,6 +4,7 @@ from django.urls import include, path
 from .shoppinglist import urls
 from .listentry import urls
 from .user import urls
+from . import api
 
 urlpatterns = [
     # shoppinglist
@@ -15,6 +16,6 @@ urlpatterns = [
     # user
     path('user/', include(user.urls)),
 
-    # # api
-    # path('', )
+    # api
+    path('', api.req)
 ]

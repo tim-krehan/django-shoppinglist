@@ -1,8 +1,9 @@
-from . import get, delete, update, check, uncheck
+from . import get, delete, update, check, uncheck, api
 from django.urls import path
 
 
 urlpatterns = [
+    path('', api.req),
     path('<int:pk>/', get.req),
     path('<int:pk>/delete/', delete.req),
     path('<int:pk>/update/', update.req),
